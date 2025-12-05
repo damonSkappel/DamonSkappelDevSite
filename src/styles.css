@@ -1867,3 +1867,62 @@ a.detail-value:hover {
     font-size: 13px;
   }
 }
+
+/* Page Layout */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Centered Container */
+.container {
+  width: 400px;
+  margin: 80px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Labels + inputs */
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: black;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Submit button */
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 16px;
+  background: black;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333;
+}
