@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 $server = "localhost";
 $username = "root";
 $password = ""; // XAMPP default
-$database = "your_personal_database"; // CHANGE THIS
+$database = "Damon_dev_site"; // CHANGE THIS
 
 // Create connection
 $conn = new mysqli($server, $username, $password, $database);
@@ -30,7 +30,6 @@ $stmt = $conn->prepare("
 
 $stmt->bind_param("sss", $name, $email, $message);
 
-// Execute + redirect
 if ($stmt->execute()) {
     header("Location: success.html");
     exit();
@@ -41,3 +40,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $conn->close();
 ?>
+
