@@ -1089,6 +1089,11 @@ a.detail-value:hover {
   color: rgb(100, 98, 198);
 }
 
+.contact .social-link-icon {
+  background: rgba(100, 98, 198, 0.15);
+  color: rgb(100, 98, 198);
+}
+
 .instagram .social-link-icon {
   background: rgba(225, 48, 108, 0.15);
   color: #e1306c;
