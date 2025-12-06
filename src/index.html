@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Damon Skappel - Home</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <div class="mainpage">
-      <nav>
+      <!-- Nav slides down from top -->
+      <nav class="slide-in-up">
         <div class="nav-container">
           <ul class="nav-menu">
             <li class="nav-item">
@@ -34,8 +36,8 @@
       </nav>
 
       <div class="grid-container home-grid">
-        <!-- Hero Section -->
-        <div class="grid-item home-hero">
+        <!-- Hero Section - slides from left -->
+        <div class="grid-item home-hero slide-in-left delay-1">
           <div class="hero-content">
             <div class="hero-badge">
               <svg
@@ -61,29 +63,29 @@
               passionate about creating innovative solutions and learning new
               technologies. Explore my projects, resume, and get in touch!
             </p>
-            <div class="hero-buttons">
-              <a href="projects.html" class="btn btn-primary">
-                View Projects
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="contact.html" class="btn btn-secondary">Contact Me</a>
-            </div>
+          </div>
+          <div class="hero-buttons">
+            <a href="projects.html" class="btn btn-primary">
+              View Projects
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary">Contact Me</a>
           </div>
         </div>
 
-        <!-- Profile Image -->
-        <div class="grid-item home-image">
+        <!-- Profile Image - slides from right -->
+        <div class="grid-item home-image slide-in-right delay-2">
           <div class="image-frame">
             <img src="../images/damonProfilePic.jpeg" alt="Damon with fish" />
             <div class="image-overlay">
@@ -92,8 +94,8 @@
           </div>
         </div>
 
-        <!-- Role Card -->
-        <div class="grid-item home-role">
+        <!-- Role Card - slides from left -->
+        <div class="grid-item home-role slide-in-left delay-3">
           <div class="role-icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -112,8 +114,8 @@
           <p>Building solutions with code and creativity</p>
         </div>
 
-        <!-- Education Card -->
-        <div class="grid-item home-education">
+        <!-- Education Card - slides from right -->
+        <div class="grid-item home-education slide-in-right delay-3">
           <div class="education-header">
             <div class="education-icon">
               <svg
@@ -146,8 +148,8 @@
           </div>
         </div>
 
-        <!-- Technologies Card -->
-        <div class="grid-item home-tech">
+        <!-- Technologies Card - slides from left -->
+        <div class="grid-item home-tech slide-in-left delay-4">
           <div class="tech-header">
             <div class="tech-icon">
               <svg
@@ -194,8 +196,8 @@
           </div>
         </div>
 
-        <!-- Quote Card -->
-        <div class="grid-item home-quote">
+        <!-- Quote Card - slides from bottom -->
+        <div class="grid-item home-quote slide-in-up delay-5">
           <div class="quote-icon">❝</div>
           <p class="quote-text">
             "Code is like humor. When you have to explain it, it's bad."
