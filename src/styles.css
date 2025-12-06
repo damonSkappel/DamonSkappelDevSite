@@ -1963,3 +1963,8 @@ button:hover {
 .delay-4 {
   transition-delay: 0.8s;
 }
+
+.social-link.email {
+  pointer-events: auto !important;
+  z-index: 999 !important;
+}
