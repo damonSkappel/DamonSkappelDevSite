@@ -31,7 +31,7 @@ $stmt = $conn->prepare("
 $stmt->bind_param("sss", $name, $email, $message);
 
 if ($stmt->execute()) {
-    header("Location: success.html");
+    header("Location: success.php");
     exit();
 } else {
     echo "Error: " . $stmt->error;

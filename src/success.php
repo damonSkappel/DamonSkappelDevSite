@@ -22,7 +22,7 @@
     <div class="box">
       <h2>Thank You!</h2>
       <p>Your message has been sent successfully.</p>
-      <a href="contact.html">Go Back</a>
+      <a href="contact.php">Go Back</a>
     </div>
   </body>
 </html>
