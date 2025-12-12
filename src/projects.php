@@ -13,22 +13,22 @@
         <div class="nav-container">
           <ul class="nav-menu">
             <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
+              <a href="index.php" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-              <a href="projects.html" class="nav-link active">Projects</a>
+              <a href="projects.php" class="nav-link active">Projects</a>
             </li>
             <li class="nav-item">
-              <a href="projectDetails.html" class="nav-link">Project Details</a>
+              <a href="projectDetails.php" class="nav-link">Project Details</a>
             </li>
             <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact</a>
+              <a href="contact.php" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-              <a href="resumeHTML.html" class="nav-link">Resume</a>
+              <a href="resumeHTML.php" class="nav-link">Resume</a>
             </li>
             <li class="nav-item">
-              <a href="contactFormPage.html" class="nav-link">Contact Form</a>
+              <a href="contactFormPage.php" class="nav-link">Contact Form</a>
             </li>
           </ul>
         </div>

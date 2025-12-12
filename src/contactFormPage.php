@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - Damon Skappel</title>
+    <title>Contact Me - Damon Skappel</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
   </head>
@@ -13,22 +13,22 @@
         <div class="nav-container">
           <ul class="nav-menu">
             <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
+              <a href="index.php" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-              <a href="projects.html" class="nav-link">Projects</a>
+              <a href="projects.php" class="nav-link">Projects</a>
             </li>
             <li class="nav-item">
-              <a href="projectDetails.html" class="nav-link">Project Details</a>
+              <a href="projectDetails.php" class="nav-link">Project Details</a>
             </li>
             <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact</a>
+              <a href="contact.php" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-              <a href="resumeHTML.html" class="nav-link">Resume</a>
+              <a href="resumeHTML.php" class="nav-link">Resume</a>
             </li>
             <li class="nav-item">
-              <a href="contactFormPage.html" class="nav-link active"
+              <a href="contactFormPage.php" class="nav-link active"
                 >Contact Form</a
               >
             </li>
@@ -38,7 +38,7 @@
 
       <div class="contact-page-container">
         <div class="contact-header slide-in-up delay-1">
-          <h1>Contact Us</h1>
+          <h1>Contact Me</h1>
           <p>Get in touch - I'd love to hear from you!</p>
         </div>
 
