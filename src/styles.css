@@ -1899,6 +1899,11 @@ label {
   color: black;
 }
 
+.required {
+  color: #dc3545;
+  margin-left: 3px;
+}
+
 input,
 textarea {
   width: 100%;
@@ -1967,4 +1972,15 @@ button:hover {
 .social-link.email {
   pointer-events: auto !important;
   z-index: 999 !important;
+}
+
+/* Form Validation Styles */
+.invalid-field {
+  border: 2px solid #ef4444 !important;
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+.invalid-field:focus {
+  outline: 2px solid #ef4444 !important;
+  outline-offset: 2px;
 }

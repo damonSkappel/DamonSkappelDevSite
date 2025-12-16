@@ -1,38 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Damon Skappel - Resume</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div class="mainpage">
-      <nav class="slide-in-up">
-        <div class="nav-container">
-          <ul class="nav-menu">
-            <li class="nav-item">
-              <a href="index.php" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="projects.php" class="nav-link">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a href="projectDetails.php" class="nav-link">Project Details</a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.php" class="nav-link">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="resumeHTML.php" class="nav-link active">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a href="contactFormPage.php" class="nav-link">Contact Form</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+<?php
+$pageTitle = "Damon Skappel - Resume";
+$activePage = "resume";
+include 'includes/header.php';
+include 'includes/nav.php';
+?>
 
       <div class="grid-container">
         <!-- Header Card -->
@@ -179,6 +150,5 @@
           </a>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+
+<?php include 'includes/footer.php'; ?>

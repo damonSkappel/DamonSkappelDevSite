@@ -1,38 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects - Damon Skappel</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div class="mainpage">
-      <nav class="slide-in-up delay-1">
-        <div class="nav-container">
-          <ul class="nav-menu">
-            <li class="nav-item">
-              <a href="index.php" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="projects.php" class="nav-link active">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a href="projectDetails.php" class="nav-link">Project Details</a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.php" class="nav-link">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="resumeHTML.php" class="nav-link">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a href="contactFormPage.php" class="nav-link">Contact Form</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+<?php
+$pageTitle = "Projects - Damon Skappel";
+$activePage = "projects";
+include 'includes/header.php';
+include 'includes/nav.php';
+?>
 
       <div class="projects-page-container">
         <div class="projects-header">
@@ -95,7 +66,7 @@
               <span class="tag">GUI Design</span>
             </div>
 
-            <a href="projectDetails.html" class="project-link">
+            <a href="projectDetails.php" class="project-link">
               View Details
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +127,7 @@
               <span class="tag">Game Logic</span>
             </div>
 
-            <a href="projectDetails.html" class="project-link">
+            <a href="projectDetails.php" class="project-link">
               View Details
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -216,7 +187,7 @@
               <span class="tag">SQL</span>
             </div>
 
-            <a href="projectDetails.html" class="project-link">
+            <a href="projectDetails.php" class="project-link">
               View Details
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -234,6 +205,5 @@
           </div>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+
+<?php include 'includes/footer.php'; ?>

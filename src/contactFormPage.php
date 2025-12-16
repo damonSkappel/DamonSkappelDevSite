@@ -1,40 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Me - Damon Skappel</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div class="mainpage">
-      <nav class="slide-in-up">
-        <div class="nav-container">
-          <ul class="nav-menu">
-            <li class="nav-item">
-              <a href="index.php" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="projects.php" class="nav-link">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a href="projectDetails.php" class="nav-link">Project Details</a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.php" class="nav-link">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="resumeHTML.php" class="nav-link">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a href="contactFormPage.php" class="nav-link active"
-                >Contact Form</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
+<?php
+session_start();
+
+// Get errors and form data from session
+$errors = $_SESSION['form_errors'] ?? [];
+$formData = $_SESSION['form_data'] ?? [];
+
+// Clear session data after retrieving
+unset($_SESSION['form_errors']);
+unset($_SESSION['form_data']);
+
+// Display alert if there are errors
+$alertMessage = '';
+if (!empty($errors)) {
+    $alertMessage = "Please fix the following errors:\\n\\n" . implode("\\n", $errors);
+}
+
+$pageTitle = "Contact Me - Damon Skappel";
+$activePage = "contactForm";
+include 'includes/header.php';
+include 'includes/nav.php';
+?>
+
+      <?php if (!empty($alertMessage)): ?>
+      <script>
+        alert('<?php echo $alertMessage; ?>');
+      </script>
+      <?php endif; ?>
 
       <div class="contact-page-container">
         <div class="contact-header slide-in-up delay-1">
@@ -46,23 +37,38 @@
           <div class="container">
             <form action="contactSubmit.php" method="POST" class="contact-form">
               <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required />
+                <label for="name">Name <span class="required">*</span></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value="<?php echo htmlspecialchars($formData['name'] ?? ''); ?>"
+                  class="<?php echo isset($errors['name']) ? 'invalid-field' : ''; ?>"
+                  required
+                />
               </div>
 
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
+                <label for="email">Email <span class="required">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value="<?php echo htmlspecialchars($formData['email'] ?? ''); ?>"
+                  class="<?php echo isset($errors['email']) ? 'invalid-field' : ''; ?>"
+                  required
+                />
               </div>
 
               <div class="form-group">
-                <label for="message">Message</label>
+                <label for="message">Message <span class="required">*</span></label>
                 <textarea
                   id="message"
                   name="message"
                   rows="5"
+                  class="<?php echo isset($errors['message']) ? 'invalid-field' : ''; ?>"
                   required
-                ></textarea>
+                ><?php echo htmlspecialchars($formData['message'] ?? ''); ?></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary">
@@ -84,6 +90,5 @@
           </div>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+
+<?php include 'includes/footer.php'; ?>

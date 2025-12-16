@@ -1,38 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - Damon Skappel</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div class="mainpage">
-      <nav class="slide-in-up">
-        <div class="nav-container">
-          <ul class="nav-menu">
-            <li class="nav-item">
-              <a href="index.php" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="projects.php" class="nav-link">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a href="projectDetails.php" class="nav-link">Project Details</a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.php" class="nav-link active">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="resumeHTML.php" class="nav-link">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a href="contactFormPage.php" class="nav-link">Contact Form</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+<?php
+$pageTitle = "Contact - Damon Skappel";
+$activePage = "contact";
+include 'includes/header.php';
+include 'includes/nav.php';
+?>
 
       <div class="contact-page-container">
         <!-- Contact Header -->
@@ -189,7 +160,7 @@
                 </div>
               </a>
 
-              <a href="contactFormPage.html" class="social-link email">
+              <a href="contactFormPage.php" class="social-link email">
                 <div class="social-link-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -376,7 +347,7 @@
               <h2>Quick Links</h2>
             </div>
             <div class="quick-links-list">
-              <a href="resumeHTML.html" class="quick-link">
+              <a href="resumeHTML.php" class="quick-link">
                 <div class="quick-link-icon">📄</div>
                 <div class="quick-link-content">
                   <div class="quick-link-title">View Resume</div>
@@ -385,14 +356,14 @@
                   </div>
                 </div>
               </a>
-              <a href="projects.html" class="quick-link">
+              <a href="projects.php" class="quick-link">
                 <div class="quick-link-icon">💼</div>
                 <div class="quick-link-content">
                   <div class="quick-link-title">My Projects</div>
                   <div class="quick-link-desc">Explore what I've built</div>
                 </div>
               </a>
-              <a href="projectDetails.html" class="quick-link">
+              <a href="projectDetails.php" class="quick-link">
                 <div class="quick-link-icon">🔍</div>
                 <div class="quick-link-content">
                   <div class="quick-link-title">Project Details</div>
@@ -403,6 +374,5 @@
           </div>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+
+<?php include 'includes/footer.php'; ?>

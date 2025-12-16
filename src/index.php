@@ -1,39 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Damon Skappel - Home</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div class="mainpage">
-      <!-- Nav slides down from top -->
-      <nav class="slide-in-up">
-        <div class="nav-container">
-          <ul class="nav-menu">
-            <li class="nav-item">
-              <a href="index.php" class="nav-link active">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="projects.php" class="nav-link">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a href="projectDetails.php" class="nav-link">Project Details</a>
-            </li>
-            <li class="nav-item">
-              <a href="contact.php" class="nav-link">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="resumeHTML.php" class="nav-link">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a href="contactFormPage.php" class="nav-link">Contact Form</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+<?php
+$pageTitle = "Damon Skappel - Home";
+$activePage = "home";
+include 'includes/header.php';
+include 'includes/nav.php';
+?>
 
       <div class="grid-container home-grid">
         <!-- Hero Section - slides from left -->
@@ -65,7 +35,7 @@
             </p>
           </div>
           <div class="hero-buttons">
-            <a href="projects.html" class="btn btn-primary">
+            <a href="projects.php" class="btn btn-primary">
               View Projects
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +50,7 @@
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
-            <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+            <a href="contact.php" class="btn btn-secondary">Contact Me</a>
           </div>
         </div>
 
@@ -205,6 +175,5 @@
           <p class="quote-author">- Cory House</p>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+
+<?php include 'includes/footer.php'; ?>
