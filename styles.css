@@ -1361,8 +1361,8 @@ a.detail-value:hover {
 }
 
 .resume-summary p {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.7;
   color: #b0b0b0;
 }
 
@@ -1498,16 +1498,16 @@ a.detail-value:hover {
 }
 
 .skill-group h4 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .skill-group p {
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* Projects */
@@ -1867,13 +1867,7 @@ a.detail-value:hover {
   }
 }
 
-/* Page Layout */
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
+/* Form Container (legacy) */
 
 /* Centered Container */
 .container {
