@@ -3,216 +3,271 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Damon Skappel - Home</title>
+    <title>Damon Skappel — Computer Science Student & Developer</title>
+    <meta
+      name="description"
+      content="Damon Skappel — Computer Science, Business & Data Science triple-major at Concordia College, IT Intern at Marvin Windows, and undergraduate robotics researcher."
+    />
+    <meta name="author" content="Damon Skappel" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <meta property="og:title" content="Damon Skappel — Developer" />
+    <meta
+      property="og:description"
+      content="Computer Science, Business & Data Science triple-major at Concordia College. Robotics research and Salesforce development."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://damonskappel.com/" />
+
+    <link rel="canonical" href="https://damonskappel.com/" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='-apple-system,system-ui' font-size='56' font-weight='700' fill='%23fafafa'%3ED%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="mainpage">
-      <nav class="slide-in-up">
-        <div class="nav-container">
-          <ul class="nav-menu">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link active">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="biography.html" class="nav-link">Biography</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a href="projects.html" class="nav-link">Projects</a>
-            </li> -->
-            <li class="nav-item">
-              <a href="project-details.html" class="nav-link"
-                >Project Details</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="resume.html" class="nav-link">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a href="certs.html" class="nav-link">Certifications</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-      <div class="grid-container home-grid">
-        <!-- Hero Section - slides from left -->
-        <div class="grid-item home-hero slide-in-left delay-1">
-          <div class="hero-content">
-            <div class="hero-badge">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              <span>Available for Opportunities</span>
-            </div>
-            <h1>Damon Skappel</h1>
-            <p class="hero-subtitle">Computer Science and Business student</p>
-            <p class="hero-description">
-              I'm Damon, a Computer Science student at Concordia College and IT
-              Intern at Marvin Windows. I build web applications, work with
-              enterprise software, and enjoy being with friends
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="nav-brand">Damon Skappel</a>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="nav-link" aria-current="page">Home</a>
+          </li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="resume.html" class="nav-link">Resume</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        <!-- HERO -->
+        <section class="hero fade-up" aria-labelledby="hero-title">
+          <div>
+            <h1 id="hero-title">Damon Skappel</h1>
+            <p class="hero-role">
+              Computer Science, Business &amp; Data Science triple-major at
+              <strong>Concordia College</strong>. Currently an
+              <strong>IT Intern at Marvin Windows</strong> and an
+              <strong>undergraduate robotics researcher</strong> benchmarking
+              imitation-learning policies on a real dual-arm robot.
             </p>
+            <div class="hero-cta">
+              <a href="projects.html" class="btn btn-primary">
+                View projects
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="contact.html" class="btn btn-ghost">Get in touch</a>
+            </div>
           </div>
-          <div class="hero-buttons">
-            <a href="projects.html" class="btn btn-primary">
-              View Projects
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
+          <div class="hero-photo">
+            <img
+              src="images/damonProfilePic.jpeg"
+              alt="Portrait of Damon Skappel."
+              width="464"
+              height="507"
+              fetchpriority="high"
+            />
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section" aria-labelledby="about-title">
+          <p class="section-eyebrow">About</p>
+          <h2 id="about-title" class="section-title">Background</h2>
+          <div class="about-grid">
+            <div class="about-text">
+              <p>
+                I'm a Computer Science, Business, and Data Science
+                triple-major at Concordia College in Moorhead, Minnesota,
+                with a concentration in Cybersecurity Operations. I grew up
+                in Warroad, MN, and discovered programming through
+                tinkering with small games before moving into web
+                development, enterprise software, and — most recently —
+                machine learning on real hardware.
+              </p>
+              <p>
+                At Marvin Windows I work with the digital team on
+                Salesforce Cloud, writing Apex and Lightning components.
+                Through Concordia I'm running a comparative study of
+                imitation-learning policies on a real dual-arm robot.
+                Outside of work I build games and websites in Java,
+                JavaScript, and Python; pursue security certifications;
+                and spend time on Lake of the Woods.
+              </p>
+            </div>
+            <aside class="about-aside" aria-label="Quick facts">
+              <div class="aside-block">
+                <h3>Location</h3>
+                <p>Moorhead, Minnesota</p>
+              </div>
+              <div class="aside-block">
+                <h3>Studying</h3>
+                <p>CS, Business &amp; Data Science · Cybersecurity Ops</p>
+              </div>
+              <div class="aside-block">
+                <h3>Beyond code</h3>
+                <ul>
+                  <li>Fishing on Lake of the Woods</li>
+                  <li>Hockey (varsity, since age 2)</li>
+                  <li>100+ hours community service</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section class="section" aria-labelledby="experience-title">
+          <p class="section-eyebrow">Currently</p>
+          <div class="section-link-row">
+            <h2 id="experience-title" class="section-title">Work &amp; research</h2>
+            <a href="resume.html" class="link">
+              Full resume
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
-            <a href="contact.html" class="btn btn-secondary">Contact Me</a>
           </div>
-        </div>
 
-        <!-- Profile Image - slides from right -->
-        <div class="grid-item home-image slide-in-right delay-2">
-          <div class="image-frame">
-            <img src="images/damonProfilePic.jpeg" alt="Damon with fish" />
-            <div class="image-overlay">
-              <p>Fishing Enthusiast</p>
+          <div class="experience-list">
+            <article class="experience">
+              <header class="experience-header">
+                <h3 class="experience-role">Undergraduate Research Assistant</h3>
+                <span class="experience-date">Summer 2026</span>
+              </header>
+              <p class="experience-org">Concordia College · Moorhead, MN</p>
+              <p class="experience-summary">
+                Comparative study of imitation-learning policies (Action
+                Chunking Transformer vs. the 450M-parameter SmolVLA) on a real
+                dual-arm SO-101 robot. Built the full pipeline end-to-end on
+                Hugging Face's LeRobot framework — hardware assembly,
+                teleop dataset collection (200 episodes, ~71k frames),
+                training, and autonomous deployment.
+              </p>
+            </article>
+
+            <article class="experience">
+              <header class="experience-header">
+                <h3 class="experience-role">IT Intern</h3>
+                <span class="experience-date">May 2025 — Present</span>
+              </header>
+              <p class="experience-org">Marvin Windows · Warroad, MN</p>
+              <p class="experience-summary">
+                Write Apex code for digital team initiatives and build
+                Lightning components customizing Salesforce Cloud
+                applications. Collaborate cross-functionally to translate
+                business requirements into shipped internal tools.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section" aria-labelledby="skills-title">
+          <p class="section-eyebrow">Toolkit</p>
+          <h2 id="skills-title" class="section-title">Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h3>Languages</h3>
+              <ul>
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Apex</li>
+                <li>SQL / SOQL</li>
+                <li>HTML &amp; CSS</li>
+                <li>PHP</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Salesforce</h3>
+              <ul>
+                <li>Apex</li>
+                <li>Lightning Components</li>
+                <li>Salesforce Cloud</li>
+                <li>Developer Console</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>ML / data</h3>
+              <ul>
+                <li>PyTorch</li>
+                <li>Hugging Face</li>
+                <li>CUDA</li>
+                <li>Weights &amp; Biases</li>
+                <li>Tableau</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Tools &amp; focus</h3>
+              <ul>
+                <li>Git, VS Code, IntelliJ</li>
+                <li>Full-stack web</li>
+                <li>ML &amp; robotics</li>
+                <li>Cybersecurity</li>
+              </ul>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- Role Card - slides from left -->
-        <div class="grid-item home-role slide-in-left delay-3">
-          <div class="role-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
+        <!-- CONTACT CTA -->
+        <section class="section" aria-labelledby="contact-cta">
+          <p class="section-eyebrow">Get in touch</p>
+          <h2 id="contact-cta" class="section-title">
+            Open to internships and collaboration
+          </h2>
+          <p class="lead u-max-text">
+            If you're a recruiter, engineering manager, or fellow student with
+            something interesting to build, I'd love to hear from you.
+          </p>
+          <div class="hero-cta u-mt-8">
+            <a
+              href="mailto:damonskappel@gmail.com?subject=Hello%20Damon"
+              class="btn btn-primary"
             >
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
+              Email me
+            </a>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=damonskappel@gmail.com&su=Hello%20Damon"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost"
+            >
+              Open in Gmail
+            </a>
+            <a href="contact.html" class="btn btn-ghost">All contact options</a>
           </div>
-          <h2>Student & Developer</h2>
-          <p>
-            Building projects using many languages and technologies. including
-            web development, game development, cybersecurity, and data
-            analytics.
-          </p>
-        </div>
+        </section>
+      </div>
+    </main>
 
-        <!-- Education Card - slides from right -->
-        <div class="grid-item home-education slide-in-right delay-3">
-          <div class="education-header">
-            <div class="education-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-              </svg>
-            </div>
-            <h2>Education</h2>
-          </div>
-          <div class="education-timeline">
-            <div class="education-item">
-              <div class="year">2024 - 2028</div>
-              <div class="school">Concordia College</div>
-              <div class="degree">
-                Computer Science & Business-Cybersecuity Operations Double Major
-              </div>
-              <div class="detail">3.8 GPA</div>
-            </div>
-            <div class="education-item">
-              <div class="year">2020 - 2024</div>
-              <div class="school">Warroad High School</div>
-              <div class="detail">4.2 GPA</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Technologies Card - slides from left -->
-        <div class="grid-item home-tech slide-in-left delay-4">
-          <div class="tech-header">
-            <div class="tech-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <h2>Technologies</h2>
-          </div>
-          <div class="tech-grid">
-            <div class="tech-item">
-              <span class="tech-dot"></span>
-              <span>HTML & CSS</span>
-            </div>
-            <div class="tech-item">
-              <span class="tech-dot"></span>
-              <span>JavaScript</span>
-            </div>
-            <div class="tech-item">
-              <span class="tech-dot"></span>
-              <span>Python</span>
-            </div>
-            <div class="tech-item">
-              <span class="tech-dot"></span>
-              <span>Java</span>
-            </div>
-            <div class="tech-item">
-              <span class="tech-dot"></span>
-              <span>Apex</span>
-            </div>
-            <div class="tech-item">
-              <span class="tech-dot"></span>
-              <span>SQL</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quote Card - slides from bottom -->
-        <div class="grid-item home-quote slide-in-up delay-5">
-          <div class="quote-icon">"</div>
-          <p class="quote-text">
-            "Code is like humor. When you have to explain it, it's bad."
-          </p>
-          <p class="quote-author">- Cory House</p>
+    <footer class="site-footer">
+      <div class="footer-row">
+        <span>&copy; 2026 Damon Skappel</span>
+        <div class="footer-links">
+          <a href="https://github.com/damonskappel" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/damon-skappel/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:damonskappel@gmail.com">Email</a>
         </div>
       </div>
-    </div>
+    </footer>
   </body>
 </html>

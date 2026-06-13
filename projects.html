@@ -3,242 +3,256 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects - Damon Skappel</title>
+    <title>Projects — Damon Skappel</title>
+    <meta
+      name="description"
+      content="Selected projects by Damon Skappel — desktop games in Java, full-stack web work, and more."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='-apple-system,system-ui' font-size='56' font-weight='700' fill='%23fafafa'%3ED%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="mainpage">
-      <nav class="slide-in-up">
-        <div class="nav-container">
-          <ul class="nav-menu">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="biography.html" class="nav-link">Biography</a>
-            </li>
-            <li class="nav-item">
-              <a href="projects.html" class="nav-link active">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a href="project-details.html" class="nav-link"
-                >Project Details</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="resume.html" class="nav-link">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a href="certs.html" class="nav-link">Certifications</a>
-            </li>
-          </ul>
-        </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="nav-brand">Damon Skappel</a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li>
+            <a href="projects.html" class="nav-link" aria-current="page"
+              >Projects</a
+            >
+          </li>
+          <li><a href="resume.html" class="nav-link">Resume</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
       </nav>
+    </header>
 
-      <div class="projects-page-container">
-        <div class="projects-header">
-          <h1>My Projects</h1>
-          <p>
-            A collection of my work in game development, web design, and
-            software engineering
+    <main id="main">
+      <div class="container">
+        <header class="page-header fade-up">
+          <p class="section-eyebrow">Projects</p>
+          <h1>Things I've built</h1>
+          <p class="lead">
+            A small collection of personal and client work spanning game
+            development, full-stack web, and data analytics. Each project taught
+            me something I now use daily.
           </p>
-        </div>
+        </header>
 
-        <div class="projects-grid">
-          <!-- BlockBuster Project -->
-          <div
-            class="project-showcase blockbuster-project slide-in-left delay-1"
-          >
-            <div class="project-badge">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <rect x="7" y="7" width="3" height="9"></rect>
-                <rect x="14" y="7" width="3" height="9"></rect>
-              </svg>
-              <span>Game Development</span>
-            </div>
+        <article id="robot-learning" class="project-detail fade-up delay-1">
+          <header class="project-header">
+            <h2>Robot Imitation Learning: ACT vs. SmolVLA</h2>
+            <span class="project-meta">2026 · Research · Concordia College</span>
+          </header>
+          <div class="project-stack">
+            <span class="chip">Python</span>
+            <span class="chip">PyTorch</span>
+            <span class="chip">Hugging Face LeRobot</span>
+            <span class="chip">CUDA</span>
+            <span class="chip">W&amp;B</span>
+            <span class="chip">SO-101</span>
+          </div>
+          <p class="project-description">
+            A comparative study of two robot-learning approaches — the Action
+            Chunking Transformer (ACT) and SmolVLA, a vision-language-action
+            model — trained on identical demonstration data to benchmark a
+            lightweight specialist against a pretrained generalist on a
+            real-world manipulation task.
+          </p>
+          <p class="project-description">
+            I built the full pipeline end-to-end on Hugging Face's LeRobot
+            framework: assembled and calibrated a dual-arm SO-101 robot with
+            leader–follower teleoperation, collected a 200-episode
+            demonstration dataset (~71k frames, dual-camera + joint-state) via
+            teleoperation, and published it to the Hugging Face Hub. I then
+            trained ACT from scratch (100k steps), fine-tuned the 450M-parameter
+            SmolVLA from its pretrained base, and deployed both policies for
+            autonomous task execution on the physical arm.
+          </p>
+          <div class="project-features">
+            <h3>What I built</h3>
+            <ul class="feature-list">
+              <li>Dual-arm SO-101 assembly &amp; calibration</li>
+              <li>Leader–follower teleoperation rig</li>
+              <li>200-episode dataset (~71k frames)</li>
+              <li>Published dataset on HF Hub</li>
+              <li>ACT trained from scratch (100k steps)</li>
+              <li>SmolVLA fine-tuned (450M params)</li>
+              <li>Autonomous policy deployment</li>
+              <li>Training profiling &amp; DDP scaling analysis</li>
+            </ul>
+          </div>
+          <div class="project-takeaway">
+            <strong>What I learned</strong>
+            Diagnosed and resolved a deep stack of Windows GPU-training issues
+            to get LeRobot running on a dual-RTX-4000-Ada workstation —
+            PyTorch / torchcodec / FFmpeg version alignment, a native
+            pyarrow-vs-PyTorch DLL load-order segfault, Hugging Face cache
+            symlink-permission failures, and Windows multiprocessing
+            constraints. I then profiled training to identify compute vs. data
+            bottlenecks, which informed a single- vs. multi-GPU (DDP) scaling
+            decision.
+          </div>
+        </article>
 
+        <article id="nixon-norman" class="project-detail fade-up delay-2">
+          <header class="project-header">
+            <h2>Nixon Norman Media</h2>
+            <span class="project-meta">2024 · Full-stack · Client work</span>
+          </header>
+          <div class="project-stack">
+            <span class="chip">HTML/CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">PHP</span>
+            <span class="chip">SQL</span>
+          </div>
+          <figure class="project-image">
+            <img
+              src="images/NixonNormanMediaHomePage.png"
+              alt="Nixon Norman Media homepage screenshot showing portfolio gallery and brand."
+              width="2872"
+              height="1462"
+              loading="lazy"
+            />
+          </figure>
+          <p class="project-description">
+            A production website I built for a local videography company.
+            Designed and developed end-to-end with a portfolio gallery,
+            service pages, testimonials, a PHP-backed contact form, and a
+            small admin layer for managing content.
+          </p>
+          <div class="project-features">
+            <h3>Features</h3>
+            <ul class="feature-list">
+              <li>Portfolio gallery</li>
+              <li>Services pages</li>
+              <li>Client testimonials</li>
+              <li>PHP-backed contact form</li>
+              <li>Responsive layout</li>
+              <li>MySQL persistence</li>
+            </ul>
+          </div>
+          <div class="project-takeaway">
+            <strong>What I learned</strong>
+            My first end-to-end client project: requirements gathering,
+            responsive layout discipline, server-side form handling, and what
+            it means to ship and support real software for someone else.
+          </div>
+        </article>
+
+        <article id="blockbuster" class="project-detail fade-up delay-3">
+          <header class="project-header">
             <h2>BlockBuster</h2>
-
-            <div class="project-images">
-              <div class="main-image">
-                <img src="images/start.png" alt="BlockBuster Logo" />
-              </div>
-              <div class="image-gallery">
-                <img
-                  src="images/BlockBusterGame.png"
-                  alt="BlockBuster Game Screen"
-                />
-                <img
-                  src="images/BlockBusterGamePlaying.png"
-                  alt="BlockBuster Game Sample"
-                />
-              </div>
-            </div>
-
-            <p class="project-description">
-              "BlockBuster" is a game based on the popular mobile game
-              BlockBlast. This project taught me a lot about Java programming,
-              game development, and user interface design.
-            </p>
-
-            <div class="project-tags">
-              <span class="tag">Java</span>
-              <span class="tag">Swing</span>
-              <span class="tag">GUI Design</span>
-            </div>
-
-            <a href="project-details.html" class="project-link">
-              View Details
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
+            <span class="project-meta">2024 · Java · Personal</span>
+          </header>
+          <div class="project-stack">
+            <span class="chip">Java</span>
+            <span class="chip">Swing</span>
+            <span class="chip">GUI</span>
+            <span class="chip">Game dev</span>
           </div>
+          <figure class="project-image">
+            <img
+              src="images/BlockBusterGamePlaying.png"
+              alt="BlockBuster gameplay: a grid of colored blocks with a score display."
+              width="794"
+              height="1040"
+              loading="lazy"
+            />
+          </figure>
+          <p class="project-description">
+            BlockBuster is a desktop arcade puzzle game built entirely in Java
+            with the Swing GUI library, inspired by the mobile game BlockBlast.
+            Players clear blocks by matching colors and chaining combos.
+          </p>
+          <div class="project-features">
+            <h3>Features</h3>
+            <ul class="feature-list">
+              <li>Persistent high-score tracking</li>
+              <li>Dark mode toggle</li>
+              <li>Multiple color themes</li>
+              <li>Combo system for bonus points</li>
+              <li>Responsive Swing UI</li>
+              <li>Keyboard-driven controls</li>
+            </ul>
+          </div>
+          <div class="project-takeaway">
+            <strong>What I learned</strong>
+            Reinforced my Swing fundamentals and taught me how to architect
+            game state — separating model, view, and input handling so feature
+            work didn't snowball into tangled code.
+          </div>
+        </article>
 
-          <!-- Blackjack Project -->
-          <div class="project-showcase blackjack-project slide-in-up delay-2">
-            <div class="project-badge">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-                <circle cx="8" cy="10" r="1"></circle>
-                <circle cx="16" cy="10" r="1"></circle>
-                <circle cx="8" cy="14" r="1"></circle>
-                <circle cx="16" cy="14" r="1"></circle>
-              </svg>
-              <span>Console Application</span>
-            </div>
-
+        <article id="blackjack" class="project-detail fade-up delay-3">
+          <header class="project-header">
             <h2>Blackjack</h2>
-
-            <div class="project-images">
-              <div class="main-image single">
-                <img
-                  src="images/BlackjackTable.png"
-                  alt="Blackjack Game Table"
-                />
-              </div>
-            </div>
-
-            <p class="project-description">
-              This was my first ever Java project made in my first semester of
-              college. I have since improved it and added more features to make
-              it more user friendly.
-            </p>
-
-            <div class="project-tags">
-              <span class="tag">Java</span>
-              <span class="tag">OOP</span>
-              <span class="tag">Game Logic</span>
-            </div>
-
-            <a href="project-details.html" class="project-link">
-              View Details
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
+            <span class="project-meta">2024 · Java · First Java project</span>
+          </header>
+          <div class="project-stack">
+            <span class="chip">Java</span>
+            <span class="chip">OOP</span>
+            <span class="chip">Console app</span>
           </div>
-
-          <!-- Nixon Norman Media Website -->
-          <div class="project-showcase website-project slide-in-right delay-3">
-            <div class="project-badge">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-              <span>Web Development</span>
-            </div>
-
-            <h2>Nixon Norman Media Website</h2>
-
-            <div class="project-images">
-              <div class="main-image single">
-                <img
-                  src="images/NixonNormanMediaHomePage.png"
-                  alt="NNM Website"
-                />
-              </div>
-            </div>
-
-            <p class="project-description">
-              This website was my first ever full-stack project made for a local
-              videography business. I learned a lot about web development,
-              responsive design, and client communication.
-            </p>
-
-            <div class="project-tags">
-              <span class="tag">HTML/CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">PHP</span>
-              <span class="tag">SQL</span>
-            </div>
-
-            <a href="project-details.html" class="project-link">
-              View Details
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
+          <figure class="project-image">
+            <img
+              src="images/BlackjackTable.png"
+              alt="Blackjack console game showing a player's hand against the dealer."
+              width="1442"
+              height="1068"
+              loading="lazy"
+            />
+          </figure>
+          <p class="project-description">
+            A console blackjack game written in Java where a single player
+            faces an AI dealer under standard casino rules. Built in my first
+            semester of college and improved across several iterations.
+          </p>
+          <div class="project-features">
+            <h3>Features</h3>
+            <ul class="feature-list">
+              <li>Virtual money betting system</li>
+              <li>Split pairs functionality</li>
+              <li>Double-down option</li>
+              <li>Strategic AI dealer logic</li>
+              <li>Standard Blackjack rules</li>
+              <li>Hand evaluation engine</li>
+            </ul>
           </div>
+          <div class="project-takeaway">
+            <strong>What I learned</strong>
+            My first real exposure to object-oriented design — modeling cards,
+            hands, decks, and players as distinct collaborators. The project
+            cemented how OOP keeps complex game state manageable.
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-row">
+        <span>&copy; 2026 Damon Skappel</span>
+        <div class="footer-links">
+          <a href="https://github.com/damonskappel" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/damon-skappel/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:damonskappel@gmail.com">Email</a>
         </div>
       </div>
-    </div>
+    </footer>
   </body>
 </html>

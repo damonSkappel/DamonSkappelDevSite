@@ -3,189 +3,347 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Damon Skappel - Resume</title>
+    <title>Resume — Damon Skappel</title>
+    <meta
+      name="description"
+      content="Resume of Damon Skappel — Computer Science, Business & Data Science triple-major at Concordia College, IT Intern at Marvin Windows, undergraduate robotics researcher."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='-apple-system,system-ui' font-size='56' font-weight='700' fill='%23fafafa'%3ED%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="mainpage">
-      <nav class="slide-in-up">
-        <div class="nav-container">
-          <ul class="nav-menu">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="biography.html" class="nav-link">Biography</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a href="projects.html" class="nav-link">Projects</a>
-            </li> -->
-            <li class="nav-item">
-              <a href="project-details.html" class="nav-link"
-                >Project Details</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="resume.html" class="nav-link active">Resume</a>
-            </li>
-            <li class="nav-item">
-              <a href="certs.html" class="nav-link">Certifications</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-      <div class="grid-container">
-        <!-- Header Card -->
-        <div class="grid-item resume-header slide-in-up delay-1">
-          <h1>Damon Skappel</h1>
-          <p class="subtitle">
-            Computer Science Student & Salesforce Developer
-          </p>
-          <p class="contact-info">
-            damonskappel@gmail.com | Warroad, Minnesota
-          </p>
-        </div>
-
-        <!-- Professional Summary -->
-        <div class="grid-item resume-summary slide-in-left delay-2">
-          <h2>Professional Summary</h2>
-          <p>
-            Computer Science student with hands-on Salesforce development
-            experience and strong foundation in multiple programming languages.
-            Currently serving as IT Intern at Marvin Windows, developing Apex
-            solutions for digital teams.
-          </p>
-        </div>
-
-        <!-- Education -->
-        <div class="grid-item resume-education slide-in-right delay-2">
-          <h2>Education</h2>
-          <div class="resume-item">
-            <h3>B.A. Computer Science & Business (Double Major)</h3>
-            <p class="institution">Concordia College, Moorhead, MN</p>
-            <p class="date">Expected May 2028</p>
-            <p class="details">
-              Concentration in Cyber Security Operations | GPA: 3.7/4.0
-            </p>
-          </div>
-        </div>
-
-        <!-- Experience -->
-        <div class="grid-item resume-experience slide-in-left delay-3">
-          <h2>Experience</h2>
-
-          <div class="resume-item">
-            <h3>IT Intern</h3>
-            <p class="institution">Marvin Windows, Warroad, MN</p>
-            <p class="date">May 2025 - Present</p>
-            <ul>
-              <li>Write Apex code for digital team initiatives</li>
-              <li>
-                Develop Lightning components and customize Salesforce Cloud
-                applications
-              </li>
-              <li>
-                Collaborate with cross-functional teams on technical solutions
-              </li>
-            </ul>
-          </div>
-
-          <div class="resume-item">
-            <h3>Community Volunteer</h3>
-            <p class="institution">Various Organizations, Warroad, MN</p>
-            <p class="date">2020 - 2024</p>
-            <ul>
-              <li>Completed 100+ hours of community service</li>
-              <li>Hockey Day Minnesota event coordination</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Technical Skills -->
-        <div class="grid-item resume-skills slide-in-right delay-3">
-          <h2>Technical Skills</h2>
-
-          <div class="skill-group">
-            <h4>Programming Languages</h4>
-            <p>Java, Python, JavaScript, HTML/CSS, PHP, Apex, SQL, SOQL</p>
-          </div>
-
-          <div class="skill-group">
-            <h4>Salesforce Technologies</h4>
-            <p>Apex, Lightning Components, Salesforce Cloud, SOQL</p>
-          </div>
-
-          <div class="skill-group">
-            <h4>Development Tools</h4>
-            <p>VS Code, IntelliJ IDEA, Git, Salesforce Developer Console</p>
-          </div>
-
-          <div class="skill-group">
-            <h4>Data & Analytics</h4>
-            <p>Tableau, SQL Database Management, Data Visualization</p>
-          </div>
-        </div>
-
-        <!-- Projects -->
-        <div class="grid-item resume-projects slide-in-left delay-4">
-          <h2>Technical Projects</h2>
-
-          <div class="project">
-            <h3>Videographer Business Website</h3>
-            <p>
-              Full-stack web application with admin dashboard for content
-              management
-            </p>
-            <p class="tech">HTML, CSS, JavaScript, PHP, SQL</p>
-          </div>
-
-          <div class="project">
-            <h3>Blackjack Game Application</h3>
-            <p>
-              Interactive card game with realistic shuffling and money
-              management
-            </p>
-            <p class="tech">Java, OOP</p>
-          </div>
-
-          <div class="project">
-            <h3>Block Buster Game</h3>
-            <p>Arcade-style puzzle game with high score system</p>
-            <p class="tech">Java, Game Development</p>
-          </div>
-
-          <div class="project">
-            <h3>Data Analytics Projects</h3>
-            <p>Traffic fatality analysis and NHL playoff prediction modeling</p>
-            <p class="tech">Tableau, Statistical Analysis</p>
-          </div>
-        </div>
-
-        <!-- Download Button -->
-        <div class="grid-item resume-download slide-in-up delay-5">
-          <a href="resume.pdf" download class="btn btn-primary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="nav-brand">Damon Skappel</a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li>
+            <a href="resume.html" class="nav-link" aria-current="page"
+              >Resume</a
             >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            Download PDF Resume
-          </a>
+          </li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        <header class="page-header fade-up">
+          <p class="section-eyebrow">Resume</p>
+          <h1>Damon Skappel</h1>
+          <p class="lead">
+            Computer Science, Business &amp; Data Science triple-major and
+            Salesforce developer. damonskappel@gmail.com · Moorhead, Minnesota.
+          </p>
+        </header>
+
+        <section class="resume-section" aria-labelledby="r-summary">
+          <h2 id="r-summary">Summary</h2>
+          <p>
+            Computer Science, Business, and Data Science triple-major with
+            hands-on Salesforce development experience and a working foundation
+            in Java, JavaScript, Python, and SQL. Currently an IT Intern at
+            Marvin Windows writing Apex and Lightning components, and an
+            undergraduate researcher at Concordia College benchmarking
+            imitation-learning policies on real-world robot hardware.
+          </p>
+        </section>
+
+        <section class="resume-section" aria-labelledby="r-experience">
+          <h2 id="r-experience">Experience</h2>
+
+          <div class="entry">
+            <div class="entry-date">Summer 2026</div>
+            <div>
+              <p class="entry-title">Undergraduate Research</p>
+              <p class="entry-org">Concordia College · Moorhead, MN</p>
+              <ul class="entry-bullets">
+                <li>
+                  Comparative study of imitation-learning policies (Action
+                  Chunking Transformer vs. SmolVLA) on a real dual-arm SO-101
+                  robot, trained on identical demonstration data.
+                </li>
+                <li>
+                  Built the full pipeline end-to-end on Hugging Face's LeRobot
+                  framework — assembled and calibrated the hardware, collected a
+                  200-episode (~71k-frame) teleop dataset, and published it to
+                  the Hugging Face Hub.
+                </li>
+                <li>
+                  Trained ACT from scratch (100k steps) and fine-tuned the
+                  450M-parameter SmolVLA, then deployed both policies for
+                  autonomous execution on the physical arm.
+                </li>
+                <li>
+                  Diagnosed a deep stack of Windows GPU-training issues
+                  (PyTorch/torchcodec/FFmpeg alignment, native DLL load-order
+                  segfault, HF cache symlink permissions) to bring up training
+                  on a dual-RTX-4000-Ada workstation; profiled training to
+                  inform a single- vs. multi-GPU (DDP) scaling decision.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-date">May 2025 — Present</div>
+            <div>
+              <p class="entry-title">IT Intern</p>
+              <p class="entry-org">Marvin Windows · Warroad, MN</p>
+              <ul class="entry-bullets">
+                <li>Write Apex code supporting digital team initiatives.</li>
+                <li>
+                  Develop Lightning components and customize Salesforce Cloud
+                  applications.
+                </li>
+                <li>
+                  Collaborate cross-functionally to translate business needs
+                  into technical implementations.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-date">2020 — 2024</div>
+            <div>
+              <p class="entry-title">Community Volunteer</p>
+              <p class="entry-org">Warroad, MN</p>
+              <ul class="entry-bullets">
+                <li>Completed 100+ hours of community service.</li>
+                <li>Helped coordinate Hockey Day Minnesota.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="resume-section" aria-labelledby="r-education">
+          <h2 id="r-education">Education</h2>
+
+          <div class="entry">
+            <div class="entry-date">2024 — 2028 (expected)</div>
+            <div>
+              <p class="entry-title">
+                B.A. Computer Science, Business &amp; Data Science (Triple
+                Major)
+              </p>
+              <p class="entry-org">
+                Concordia College, Moorhead, MN · Cybersecurity Operations
+                concentration · GPA 3.8
+              </p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-date">2020 — 2024</div>
+            <div>
+              <p class="entry-title">High School Diploma</p>
+              <p class="entry-org">
+                Warroad High School, Warroad, MN · GPA 4.2
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="resume-section" aria-labelledby="r-skills">
+          <h2 id="r-skills">Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h3>Languages</h3>
+              <ul>
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Apex</li>
+                <li>SQL / SOQL</li>
+                <li>HTML &amp; CSS</li>
+                <li>PHP</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Salesforce</h3>
+              <ul>
+                <li>Apex</li>
+                <li>Lightning Components</li>
+                <li>Salesforce Cloud</li>
+                <li>Developer Console</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>ML &amp; robotics</h3>
+              <ul>
+                <li>PyTorch</li>
+                <li>Hugging Face LeRobot</li>
+                <li>CUDA</li>
+                <li>Weights &amp; Biases</li>
+                <li>Imitation learning (ACT, VLA)</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Tooling</h3>
+              <ul>
+                <li>Git</li>
+                <li>VS Code</li>
+                <li>IntelliJ IDEA</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3>Data &amp; analytics</h3>
+              <ul>
+                <li>Tableau</li>
+                <li>SQL database design</li>
+                <li>Data visualization</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="resume-section" aria-labelledby="r-projects">
+          <h2 id="r-projects">Selected projects</h2>
+
+          <div class="entry">
+            <div class="entry-date">2026</div>
+            <div>
+              <p class="entry-title">
+                Robot Imitation Learning: ACT vs. SmolVLA
+              </p>
+              <p class="entry-org">
+                Python, PyTorch, Hugging Face LeRobot, CUDA, Weights &amp;
+                Biases, SO-101 robot arm
+              </p>
+              <ul class="entry-bullets">
+                <li>
+                  Comparative study of a lightweight specialist (ACT) vs. a
+                  pretrained generalist (450M-param SmolVLA) on a real-world
+                  manipulation task. Built the full pipeline end-to-end on the
+                  LeRobot framework, including a 200-episode (~71k-frame) teleop
+                  dataset published to the Hugging Face Hub.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-date">2024</div>
+            <div>
+              <p class="entry-title">
+                Nixon Norman Media — Videography website
+              </p>
+              <p class="entry-org">HTML, CSS, JavaScript, PHP, SQL</p>
+              <ul class="entry-bullets">
+                <li>
+                  Full-stack site for a local videography business with admin
+                  layer for content management.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-date">2024</div>
+            <div>
+              <p class="entry-title">BlockBuster — Java game</p>
+              <p class="entry-org">Java, Swing</p>
+              <ul class="entry-bullets">
+                <li>
+                  Arcade-style puzzle game with persistent high scores and combo
+                  system.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-date">2024</div>
+            <div>
+              <p class="entry-title">Blackjack — Console game</p>
+              <p class="entry-org">Java, OOP</p>
+              <ul class="entry-bullets">
+                <li>
+                  AI-dealer blackjack with virtual betting, splitting, and
+                  doubling.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-date">2024</div>
+            <div>
+              <p class="entry-title">Data analytics projects</p>
+              <p class="entry-org">Tableau, statistical analysis</p>
+              <ul class="entry-bullets">
+                <li>
+                  Traffic-fatality analysis and NHL playoff prediction modeling.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="resume-section" aria-labelledby="r-certs">
+          <h2 id="r-certs">Certifications</h2>
+          <div class="cert-list">
+            <article class="cert">
+              <header class="cert-header">
+                <h3 class="cert-title">Google Cybersecurity</h3>
+                <span class="cert-status completed">Completed</span>
+              </header>
+              <p>
+                Foundation-level certificate covering IT operations: hardware,
+                networking, security tooling, and troubleshooting.
+              </p>
+            </article>
+            <article class="cert">
+              <header class="cert-header">
+                <h3 class="cert-title">CompTIA Security+</h3>
+                <span class="cert-status in-progress">In progress</span>
+              </header>
+              <p>
+                Industry cybersecurity certification covering network security,
+                compliance frameworks, and threat management.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-row">
+        <span>&copy; 2026 Damon Skappel</span>
+        <div class="footer-links">
+          <a
+            href="https://github.com/damonskappel"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/damon-skappel/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a href="mailto:damonskappel@gmail.com">Email</a>
         </div>
       </div>
-    </div>
+    </footer>
   </body>
 </html>
