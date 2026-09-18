@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADS-B Flight Tracker — Damon Skappel</title>
+    <meta
+      name="description"
+      content="A real-time flight tracking application built with Java and Spring Boot — polling live ADS-B data from the OpenSky Network and visualizing active flights on an interactive Leaflet.js map."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='-apple-system,system-ui' font-size='56' font-weight='700' fill='%23fafafa'%3ED%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=2" />
+    <script src="script.js?v=2" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="nav-brand">Damon Skappel</a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li>
+            <a href="projects.html" class="nav-link" aria-current="page"
+              >Projects</a
+            >
+          </li>
+          <li><a href="resume.html" class="nav-link">Resume</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        <header class="project-page-header fade-up">
+          <a href="projects.html" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            All projects
+          </a>
+          <p class="section-eyebrow">Project</p>
+          <h1>ADS-B Flight Tracker</h1>
+          <span class="project-meta">2026 · Java &amp; Spring Boot · Personal</span>
+          <p class="lead">
+            A real-time flight tracking application built with Java and Spring
+            Boot. Polls live ADS-B data from the OpenSky Network every 60
+            seconds, persists aircraft positions to a PostgreSQL database on
+            Azure, and visualizes active flights on an interactive Leaflet.js
+            map with rotating aircraft icons and click-through popups showing
+            altitude, speed, heading, and vertical rate.
+          </p>
+
+          <div class="project-stack">
+            <span class="chip">Java 21</span>
+            <span class="chip">Spring Boot</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Azure</span>
+            <span class="chip">Docker</span>
+            <span class="chip">JPA/Hibernate</span>
+            <span class="chip">Leaflet.js</span>
+            <span class="chip">REST API</span>
+            <span class="chip">GitHub Actions</span>
+          </div>
+
+          <div class="project-cta">
+            <a
+              href="https://flighttracker-ds-hde4c4cuazcbcqgm.westus-01.azurewebsites.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              View live project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a
+              href="https://github.com/damonSkappel/flighttracker"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost"
+            >
+              Source on GitHub
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </header>
+
+        <section class="case-section fade-up delay-1" aria-labelledby="overview-title">
+          <h2 id="overview-title">Overview</h2>
+          <p>
+            Every aircraft in controlled airspace continuously broadcasts its
+            own position, altitude, and velocity over ADS-B — a public,
+            unencrypted signal that anyone with a receiver can listen to. The
+            OpenSky Network aggregates those broadcasts from thousands of
+            volunteer receivers and exposes them through an API. This project
+            turns that firehose into something you can actually look at: a live
+            map of aircraft currently in the air, each icon rotated to its true
+            heading, each one clickable for the telemetry behind it.
+          </p>
+          <p>
+            I built it because I wanted a project that was genuinely
+            <em>live</em> rather than a static CRUD app — something with a real
+            external data source, real persistence, and real deployment
+            constraints. Every piece of it had to keep working while unattended:
+            the poller has to survive an API that intermittently rate-limits,
+            the database has to absorb a burst of writes every minute without
+            starving the web requests, and the whole thing has to stay up on a
+            small Azure App Service instance. Those constraints turned out to be
+            where all the interesting engineering was.
+          </p>
+        </section>
+
+        <section class="case-section fade-up delay-1" aria-labelledby="architecture-title">
+          <h2 id="architecture-title">Architecture</h2>
+          <div class="arch-flow">
+            <span class="arch-step">Scheduled poller</span>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <span class="arch-step">OpenSky API</span>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <span class="arch-step">Spring Boot backend</span>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <span class="arch-step">Azure PostgreSQL</span>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <span class="arch-step">REST endpoints</span>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <span class="arch-step">Leaflet.js frontend</span>
+          </div>
+          <p>
+            A Spring <code>@Scheduled</code> poller fires every 60 seconds and
+            requests the current state vectors from the OpenSky Network API. The
+            Spring Boot backend maps that response onto JPA entities and writes
+            aircraft and position records to a PostgreSQL instance hosted on
+            Azure, upserting aircraft that are already known and appending new
+            position rows for the ones that have moved. A set of REST endpoints
+            exposes the most recent snapshot as JSON, and the Leaflet.js
+            frontend fetches from those endpoints to draw the map — one marker
+            per aircraft, rotated to its reported heading, with a popup bound to
+            each marker carrying altitude, ground speed, heading, and vertical
+            rate.
+          </p>
+          <p>
+            The whole application is containerized with Docker and deployed to
+            Azure App Service. A GitHub Actions workflow builds the image and
+            pushes the new revision on every merge to main, so deployment is
+            just a merge.
+          </p>
+        </section>
+
+        <section class="case-section fade-up delay-2" aria-labelledby="challenges-title">
+          <h2 id="challenges-title">Technical challenges solved</h2>
+          <div class="challenge-grid">
+            <article class="challenge">
+              <h3>The N+1 query problem</h3>
+              <p>
+                The first version of the map endpoint loaded a list of aircraft
+                and then lazily touched each one's positions, which made
+                Hibernate issue one query for the list plus one more per
+                aircraft — hundreds of round trips to satisfy a single page
+                load. Profiling the generated SQL made the pattern obvious. I
+                reworked the repository layer to fetch the data it actually
+                needed in one pass via an explicit join fetch and a projection,
+                which collapsed those hundreds of queries into a single query
+                and took the endpoint from visibly slow to instant.
+              </p>
+            </article>
+            <article class="challenge">
+              <h3>Connection pool exhaustion under load</h3>
+              <p>
+                Under concurrent requests the app would stall and then start
+                throwing timeouts waiting for a connection. The cause was
+                connections being held far longer than the work required —
+                long-lived transactions spanning work that didn't need to be
+                transactional, on a pool sized for a much smaller App Service
+                tier. I tuned the HikariCP pool to match what the Azure
+                PostgreSQL instance could actually support and tightened
+                transaction boundaries so connections were borrowed for the
+                shortest possible window and returned immediately.
+              </p>
+            </article>
+            <article class="challenge">
+              <h3>Application Insights classloader conflict</h3>
+              <p>
+                Enabling the Application Insights Java agent on Azure App
+                Service broke startup outright — the agent attaches before the
+                Spring Boot application and its instrumentation collided with
+                the executable JAR's nested classloader, failing in a stack
+                trace that pointed nowhere near the actual cause. Isolating it
+                meant reproducing the container locally and bisecting the agent
+                configuration until the conflict was identifiable, then
+                resolving the load order so telemetry and the application could
+                coexist.
+              </p>
+            </article>
+            <article class="challenge">
+              <h3>Batch ingestion vs. transaction monopolization</h3>
+              <p>
+                Each poll cycle brings in thousands of state vectors at once.
+                Writing them inside one long transaction meant a single ingest
+                could hold its connection and locks for the duration, starving
+                the REST endpoints serving the map at exactly the moment users
+                were looking at it. I restructured ingestion to write in bounded
+                batches with JDBC batching enabled, so the poller commits in
+                chunks and releases its connection between them instead of
+                monopolizing the database for the length of the whole cycle.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="case-section fade-up delay-2" aria-labelledby="learned-title">
+          <h2 id="learned-title">What I learned</h2>
+          <p>
+            This was the project where the Spring ecosystem stopped being
+            magic. Working with JPA/Hibernate taught me what an ORM is actually
+            doing underneath — that an innocent-looking field access can trigger
+            a query, that fetch strategy is a design decision rather than a
+            default, and that reading the generated SQL is the fastest way to
+            understand your own code. Dependency injection went from an
+            annotation I copied to something I reach for deliberately, because
+            constructor-injected components turned out to be the reason I could
+            swap and test pieces in isolation.
+          </p>
+          <p>
+            The operational half taught me just as much. Docker made the "works
+            on my machine" gap concrete and then closed it. GitHub Actions
+            turned deployment from a nervous manual ritual into a merge. Azure
+            App Service taught me to read platform logs and to respect the
+            resource limits of the tier I'm actually paying for. And the
+            connection pool work gave me something I don't think you can learn
+            from a tutorial: database connections are a small, finite,
+            genuinely contended resource, and code that holds one a moment
+            longer than it needs to is a bug waiting for traffic.
+          </p>
+        </section>
+
+        <section class="case-section fade-up delay-3" aria-labelledby="next-title">
+          <h2 id="next-title">What's next — dead reckoning</h2>
+          <p>
+            Right now the map redraws only when a new poll lands, so aircraft
+            sit still for 60 seconds and then jump to their new positions. The
+            next feature is dead reckoning: between poll cycles, the frontend
+            will interpolate each aircraft's position from its last known ground
+            speed and heading, advancing the marker along its projected track as
+            time passes and snapping back to truth whenever fresh data arrives.
+            The underlying data doesn't change — it's the same 60-second poll —
+            but the aircraft will glide the way they actually fly instead of
+            teleporting once a minute.
+          </p>
+        </section>
+
+        <section class="case-section fade-up delay-3" aria-labelledby="screenshots-title">
+          <h2 id="screenshots-title">Screenshots</h2>
+          <div class="screenshot-grid">
+            <figure class="shot">
+              <img
+                src="images/FlightTrackerMap.png"
+                alt="Flight Tracker map view showing 8,029 aircraft as blue icons across the continental United States, with a header bar reading Aircraft 8,029, Last update 3:52:39 PM, and a Live indicator."
+                width="1717"
+                height="945"
+                loading="lazy"
+              />
+              <figcaption>
+                Live national view — 8,029 aircraft in the air at once, each
+                icon rotated to its reported heading. The header tracks the
+                current count and the timestamp of the last successful poll.
+              </figcaption>
+            </figure>
+            <figure class="shot shot-narrow">
+              <img
+                src="images/FlightTrackerAircraftPopup.png"
+                alt="Close-up of the map near Fargo, North Dakota with an aircraft popup open for N425EV, listing ICAO24 a50eaa, country United States, status Airborne, altitude 17,900 ft, speed 262 kts, heading 327 degrees, and vertical rate 8 meters per second descending."
+                width="612"
+                height="309"
+                loading="lazy"
+              />
+              <figcaption>
+                Clicking any aircraft opens its telemetry — ICAO24 address,
+                origin country, airborne status, altitude, ground speed,
+                heading, and vertical rate.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-row">
+        <span>&copy; 2026 Damon Skappel</span>
+        <div class="footer-links">
+          <a href="https://github.com/damonskappel" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/damon-skappel/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:damonskappel@gmail.com">Email</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

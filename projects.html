@@ -6,7 +6,7 @@
     <title>Projects — Damon Skappel</title>
     <meta
       name="description"
-      content="Selected projects by Damon Skappel — desktop games in Java, full-stack web work, and more."
+      content="Selected projects by Damon Skappel — real-time data applications, desktop games in Java, full-stack web work, and more."
     />
     <meta name="theme-color" content="#0a0a0a" />
     <link
@@ -54,7 +54,63 @@
           </p>
         </header>
 
-        <article id="robot-learning" class="project-detail fade-up delay-1">
+        <article id="flight-tracker" class="project-detail fade-up delay-1">
+          <header class="project-header">
+            <h2>ADS-B Flight Tracker</h2>
+            <span class="project-meta">2026 · Java &amp; Spring Boot · Personal</span>
+          </header>
+          <div class="project-stack">
+            <span class="chip">Java 21</span>
+            <span class="chip">Spring Boot</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Azure</span>
+            <span class="chip">Docker</span>
+            <span class="chip">JPA/Hibernate</span>
+            <span class="chip">Leaflet.js</span>
+            <span class="chip">REST API</span>
+            <span class="chip">GitHub Actions</span>
+          </div>
+          <figure class="project-image">
+            <img
+              src="images/FlightTrackerMap.png"
+              alt="Flight Tracker map view showing thousands of aircraft as blue icons across the continental United States."
+              width="1717"
+              height="945"
+              loading="lazy"
+            />
+          </figure>
+          <p class="project-description">
+            A real-time flight tracking application built with Java and Spring
+            Boot. Polls live ADS-B data from the OpenSky Network every 60
+            seconds, persists aircraft positions to a PostgreSQL database on
+            Azure, and visualizes active flights on an interactive Leaflet.js
+            map with rotating aircraft icons and click-through popups showing
+            altitude, speed, heading, and vertical rate.
+          </p>
+          <div class="project-actions">
+            <a href="flight-tracker.html" class="link">
+              Read the case study
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a
+              href="https://flighttracker-ds-hde4c4cuazcbcqgm.westus-01.azurewebsites.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link"
+            >
+              View live project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article id="robot-learning" class="project-detail fade-up delay-2">
           <header class="project-header">
             <h2>Robot Imitation Learning: ACT vs. SmolVLA</h2>
             <span class="project-meta">2026 · Research · Concordia College</span>
@@ -110,7 +166,7 @@
           </div>
         </article>
 
-        <article id="nixon-norman" class="project-detail fade-up delay-2">
+        <article id="nixon-norman" class="project-detail fade-up delay-3">
           <header class="project-header">
             <h2>Nixon Norman Media</h2>
             <span class="project-meta">2024 · Full-stack · Client work</span>
