@@ -57,8 +57,8 @@
           <span class="project-meta">2026 · Java &amp; Spring Boot · Personal</span>
           <p class="lead">
             A real-time flight tracking application built with Java and Spring
-            Boot. Polls live ADS-B data from the OpenSky Network every 60
-            seconds, persists aircraft positions to a PostgreSQL database on
+            Boot. Polls live ADS-B data from the OpenSky Network every two
+            minutes, persists aircraft positions to a PostgreSQL database on
             Azure, and visualizes active flights on an interactive Leaflet.js
             map with rotating aircraft icons and click-through popups showing
             altitude, speed, heading, and vertical rate.
@@ -122,7 +122,7 @@
             external data source, real persistence, and real deployment
             constraints. Every piece of it had to keep working while unattended:
             the poller has to survive an API that intermittently rate-limits,
-            the database has to absorb a burst of writes every minute without
+            the database has to absorb a burst of writes every cycle without
             starving the web requests, and the whole thing has to stay up on a
             small Azure App Service instance. Those constraints turned out to be
             where all the interesting engineering was.
@@ -145,7 +145,7 @@
             <span class="arch-step">Leaflet.js frontend</span>
           </div>
           <p>
-            A Spring <code>@Scheduled</code> poller fires every 60 seconds and
+            A Spring <code>@Scheduled</code> poller fires every two minutes and
             requests the current state vectors from the OpenSky Network API. The
             Spring Boot backend maps that response onto JPA entities and writes
             aircraft and position records to a PostgreSQL instance hosted on
@@ -162,6 +162,21 @@
             Azure App Service. A GitHub Actions workflow builds the image and
             pushes the new revision on every merge to main, so deployment is
             just a merge.
+          </p>
+        </section>
+
+        <section class="case-section fade-up delay-2" aria-labelledby="next-title">
+          <h2 id="next-title">Dead reckoning</h2>
+          <p>
+            The map used to redraw only when a new poll landed, so aircraft sat
+            still between cycles and then jumped to their new positions. Dead
+            reckoning fixed that: between polls, the frontend projects each
+            aircraft forward from its last known ground speed and heading,
+            advancing the marker along its track and snapping back to truth
+            whenever fresh data arrives. The backend still polls OpenSky every
+            two minutes, but the map refreshes every 30 seconds off those
+            projections, so the aircraft glide the way they actually fly
+            instead of teleporting.
           </p>
         </section>
 
@@ -252,21 +267,6 @@
           </p>
         </section>
 
-        <section class="case-section fade-up delay-3" aria-labelledby="next-title">
-          <h2 id="next-title">What's next — dead reckoning</h2>
-          <p>
-            Right now the map redraws only when a new poll lands, so aircraft
-            sit still for 60 seconds and then jump to their new positions. The
-            next feature is dead reckoning: between poll cycles, the frontend
-            will interpolate each aircraft's position from its last known ground
-            speed and heading, advancing the marker along its projected track as
-            time passes and snapping back to truth whenever fresh data arrives.
-            The underlying data doesn't change — it's the same 60-second poll —
-            but the aircraft will glide the way they actually fly instead of
-            teleporting once a minute.
-          </p>
-        </section>
-
         <section class="case-section fade-up delay-3" aria-labelledby="screenshots-title">
           <h2 id="screenshots-title">Screenshots</h2>
           <div class="screenshot-grid">
@@ -293,7 +293,7 @@
                 loading="lazy"
               />
               <figcaption>
-                Clicking any aircraft opens its telemetry — ICAO24 address,
+                Clicking any aircraft opens its telemetry — ICAO24 address, Tail Number,
                 origin country, airborne status, altitude, ground speed,
                 heading, and vertical rate.
               </figcaption>
